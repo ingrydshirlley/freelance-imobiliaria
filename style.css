@@ -71,15 +71,6 @@ header .top-header nav a:hover {
     font-size: 16px;
 }
 
-header .top-header nav a {
-    width: 65px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 30px;
-    transition: all .2s linear;
-}
-
 header .top-header nav .contact {
     background-color: white;
     color: black;
