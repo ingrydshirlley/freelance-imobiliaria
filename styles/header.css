@@ -1,0 +1,170 @@
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30rem;
+    background-image: url(../img/header.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header .top-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 8rem 10px 8rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #0000001d;
+    border-radius: 0px 0px 10px 10px;
+}
+
+header .top-header .logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+header .top-header nav .contact {
+    background-color: white;
+    color: black;
+    padding: 8px 8px 8px 8px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    transition: all .3s linear;
+    height: 35px;
+}
+
+header .top-header nav .contact:hover {
+    font-size: 13.5px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.227);
+}
+
+header .main-header {
+    display: flex;
+    width: 100%;
+    padding: 0px 8rem 0px 8rem;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .main-header .texts {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: white;
+}
+
+header .main-header .texts h1 {
+    font-size: 1.8rem;
+}
+
+header .main-header .texts h1 span {
+    font-size: 1.8rem;
+    color: #207FEE;
+}
+
+header .main-header .texts span {
+    font-size: 1rem;
+}
+
+header .main-header .container-filters {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+    width: 50rem;
+    height: 18rem;
+    border-radius: 20px;
+    flex-direction: column;
+    gap: 17px;
+}
+
+header .main-header .container-filters .tipo {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+header .main-header .container-filters .tipo button {
+    width: 180px;
+    border-radius: 30px;
+    border: 2px solid black;
+    height: 40px;
+    font-weight: 600;
+    background-color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+header .main-header .container-filters .tipo button:hover {
+    background-color: black;
+    color: #fff;
+}
+
+header .main-header .container-filters .filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+header .main-header .container-filters .filtros .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .main-header .container-filters .filtros .row select {
+    width: 220px;
+    border-radius: 10px;
+    border: none;
+    background-color: #EDEDED;
+    height: 45px;
+    font-size: 15px;
+}
+
+header .main-header .container-filters .botao {
+    width: 100%;
+    display: flex;
+}
+
+header .main-header .container-filters .botao button {
+    width: 250px;
+    border-radius: 10px;
+    border: none;
+    height: 45px;
+    background-color: #207FEE;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+header .main-header .container-filters .botao button:hover {
+    background-color: #1557a2;
+}

@@ -1,0 +1,92 @@
+
+#app {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 60px;
+    justify-content: center;
+    position: absolute;
+    top: 30rem;
+    left: 0;
+    padding: 4rem 8rem 4rem 8rem;
+    width: 100%;
+}
+
+.casa-box {
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 260px;
+    height: 340px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    box-shadow: 10px 4px 30px rgba(60, 62, 77, 0.234);
+}
+
+.casa-box:hover {
+    transform: scale(1.03);
+}
+
+.box-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.box-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 20px 0px 0px;
+    object-fit: cover;
+    object-position: 25% 25%;
+}
+
+.box-informations {
+    width: 100%;
+    padding: 5px 0px 5px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box-informations .tipo-casa {
+    color: #207FEE;
+    font-size: .8rem;
+    font-weight: 700;
+    margin-top: .3rem;
+}
+
+.box-informations h2 {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: .5rem;
+    color: #000000;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 90%;
+    text-overflow: ellipsis;
+}
+
+.box-informations .preco {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-top: .3rem;
+    color: #276915;
+}
+
+.box-informations .endereco {
+    font-weight: 500;
+    font-size: .9rem;
+    margin-top: .5rem;
+    color: #000000c4;
+}
+
+.box-informations div {
+    font-weight: 600;
+    display: flex;
+    gap: 1rem;
+    font-size: .9rem;
+    margin-top: .4rem;
+}
+
+.box-informations div i {
+    color: #207FEE;
+}
