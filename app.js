@@ -1,34 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
     const appDiv = document.getElementById('app');
     const verMaisBtn = document.getElementById('verMaisBtn');
+    const limparFiltrosBtn = document.getElementById('limparFiltrosBtn');
+    const selectTipoImovel = document.getElementById('select-tipo-imovel');
     const itemsPerPage = 8;
     let startIndex = 0;
+    let allCasasData = [];
+    let currentCategoriaImovel = '';
+    let currentBairroCidade = '';
+    let currentTipoImovel = '';
 
-    function exibirCasas() {
-        fetch('http://localhost:3001/casas')
-            .then(response => {
-                console.log('Requisição para /casas bem-sucedida.');
-                return response.json();
-            })
-            .then(data => {
-                console.log('Dados obtidos com sucesso:', data);
+    function exibirCasas(casas) {
+        const casasExibidas = casas.slice(startIndex, startIndex + itemsPerPage);
 
-                const casas = data.casas;
+        casasExibidas.forEach(casa => {
+            const casaDiv = criarCasaDiv(casa);
+            appDiv.appendChild(casaDiv);
+        });
 
-                const casasExibidas = casas.slice(startIndex, startIndex + itemsPerPage);
+        startIndex += itemsPerPage;
 
-                casasExibidas.forEach(casa => {
-                    const casaDiv = criarCasaDiv(casa);
-                    appDiv.appendChild(casaDiv);
-                });
-
-                startIndex += itemsPerPage;
-
-                if (startIndex >= casas.length) {
-                    verMaisBtn.style.display = 'none'; // Oculta o botão quando todos os itens foram exibidos
-                }
-            })
-            .catch(error => console.error('Erro ao obter dados:', error));
+        if (startIndex >= casas.length) {
+            verMaisBtn.style.display = 'none';
+        } else {
+            verMaisBtn.style.display = 'block';
+        }
     }
 
     function criarCasaDiv(casa) {
@@ -58,14 +54,69 @@ document.addEventListener('DOMContentLoaded', () => {
         return casaDiv;
     }
 
-    // evento de clique botão "Ver Mais"
-    verMaisBtn.addEventListener('click', exibirCasas);
+    function buscarImoveis() {
+        currentCategoriaImovel = document.getElementById('select-categoria-imovel').value;
+        currentBairroCidade = document.getElementById('input-bairro-cidade').value;
+        currentTipoImovel = selectTipoImovel.value;
 
-    // exibe as primeiras casas ao carregar a página
-    exibirCasas();
+        console.log('Categoria de Imóvel:', currentCategoriaImovel);
+        console.log('Bairro/Cidade:', currentBairroCidade);
+        console.log('Tipo de Imóvel:', currentTipoImovel);
+
+        fetch('http://localhost:3001/casas')
+            .then(response => response.json())
+            .then(data => {
+                const casasFiltradas = data.casas.filter(casa => {
+                    return (!currentCategoriaImovel || casa.categoria === currentCategoriaImovel) &&
+                        (!currentBairroCidade || casa.bairro.includes(currentBairroCidade) || casa.cidade.includes(currentBairroCidade)) &&
+                        (!currentTipoImovel || casa.tipo === currentTipoImovel);
+                });
+
+                allCasasData = data.casas;
+                appDiv.innerHTML = '';
+                startIndex = 0;
+                exibirCasas(casasFiltradas);
+            })
+            .catch(error => console.error('Erro ao obter dados:', error));
+    }
+
+    function limparFiltros() {
+        document.getElementById('select-categoria-imovel').value = '';
+        document.getElementById('input-bairro-cidade').value = '';
+        selectTipoImovel.value = '';
+
+        currentCategoriaImovel = '';
+        currentBairroCidade = '';
+        currentTipoImovel = '';
+
+        window.location.reload();
+    }
+
+
+    verMaisBtn.addEventListener('click', () => {
+        fetch('http://localhost:3001/casas')
+            .then(response => response.json())
+            .then(data => {
+                exibirCasas(data.casas);
+            })
+            .catch(error => console.error('Erro ao obter dados:', error));
+    });
+
+    limparFiltrosBtn.addEventListener('click', limparFiltros);
+
+    fetch('http://localhost:3001/casas')
+        .then(response => response.json())
+        .then(data => {
+            allCasasData = data.casas;
+            exibirCasas(allCasasData);
+        })
+        .catch(error => console.error('Erro ao obter dados:', error));
 
     const topoButton = document.getElementById('topo');
     topoButton.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    const buscarBtn = document.getElementById('buscarBtn');
+    buscarBtn.addEventListener('click', buscarImoveis);
 });

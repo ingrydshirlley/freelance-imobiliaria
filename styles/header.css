@@ -3,7 +3,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 30rem;
+    height: 28rem;
     background-image: url(../img/header.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -50,6 +50,7 @@ header .top-header nav .contact {
     width: 140px;
     transition: all .3s linear;
     height: 35px;
+    cursor: pointer
 }
 
 header .top-header nav .contact:hover {
@@ -92,11 +93,11 @@ header .main-header .texts span {
 header .main-header .container-filters {
     background-color: rgb(255, 255, 255);
     display: flex;
-    padding: 40px;
+    padding: 50px;
     align-items: center;
     justify-content: center;
-    width: 50rem;
-    height: 18rem;
+    width: 40rem;
+    height: 14rem;
     border-radius: 20px;
     flex-direction: column;
     gap: 17px;
@@ -105,58 +106,58 @@ header .main-header .container-filters {
 header .main-header .container-filters .tipo {
     width: 100%;
     display: flex;
-    gap: 20px;
-}
-
-header .main-header .container-filters .tipo button {
-    width: 180px;
-    border-radius: 30px;
-    border: 2px solid black;
-    height: 40px;
-    font-weight: 600;
-    background-color: white;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-}
-
-header .main-header .container-filters .tipo button:hover {
-    background-color: black;
-    color: #fff;
-}
-
-header .main-header .container-filters .filtros {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 100%;
-}
-
-header .main-header .container-filters .filtros .row {
-    width: 100%;
-    display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-header .main-header .container-filters .filtros .row select {
-    width: 220px;
+header .main-header .container-filters .tipo select {
     border-radius: 10px;
     border: none;
     background-color: #EDEDED;
     height: 45px;
     font-size: 15px;
+    padding-left: 5px;
+}
+
+#select-tipo-imovel {
+    width: 50%;
+}
+
+#select-categoria-imovel {
+    width: 45%;
+}
+
+header .main-header .container-filters .tipo input {
+    border-radius: 10px;
+    border: none;
+    background-color: #EDEDED;
+    height: 45px;
+    font-size: 15px;
+    outline: none;
+    padding-left: 15px;
+}
+
+#input-bairro-cidade {
+    width: 370px;
 }
 
 header .main-header .container-filters .botao {
     width: 100%;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .main-header .container-filters .botao button {
-    width: 250px;
+#buscarBtn {
+    width: 150px;
     border-radius: 10px;
     border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 45px;
+    gap: 8px;
     background-color: #207FEE;
     font-size: 15px;
     font-weight: 600;
@@ -165,6 +166,24 @@ header .main-header .container-filters .botao button {
     transition: all .3s ease-in-out;
 }
 
-header .main-header .container-filters .botao button:hover {
+#buscarBtn:hover {
     background-color: #1557a2;
+}
+
+#limparFiltrosBtn {
+    width: 120px;
+    border-radius: 10px;
+    border: none;
+    height: 45px;
+    background-color: #000000;
+    font-size: 13px;
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    font-weight: 500;
+}
+
+#limparFiltrosBtn:hover {
+    background-color: #000000;
+    box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.133);
 }

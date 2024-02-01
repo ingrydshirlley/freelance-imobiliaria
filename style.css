@@ -59,3 +59,7 @@ button#topo:hover {
     background-color: #1557a2;
     font-size: 18px;
 }
+
+html, body {
+    scroll-behavior: smooth;
+}

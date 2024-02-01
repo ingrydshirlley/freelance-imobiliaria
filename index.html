@@ -29,54 +29,34 @@
                 <h1> Mais de 2 anos atuando
                     no mercado <span>imobiliário</span>.
                 </h1>
-    
+
                 <span>
                     Especialistas em aluguel e venda de imóveis de alto
                     padrão na região da grande São Paulo.
                 </span>
             </div>
-    
+
             <div class="container-filters">
                 <div class="tipo">
-                    <button class="imovel-alugar">Imóveis para Alugar</button>
-                    <button class="imovel-comprar">Imóveis para Comprar</button>
-                    <button class="imovel-video">Imóveis com Vídeo</button>
-                </div>
+                    <select id="select-tipo-imovel">
+                        <option value="" disabled selected>Selecione o tipo</option>
+                        <option value="Compra">Compra</option>
+                        <option value="Aluguel">Aluguel</option>
+                    </select>
 
-                <div class="filtros">
-                    <div class="row">
-                        <select>
-                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
-                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
-                        </select>                        
-                        <select>
-                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
-                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
-                        </select>                        
-                        <select>
-                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
-                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
-                        </select>                        
-                    </div>
+                    <select id="select-categoria-imovel">
+                        <option value="" disabled selected>Selecione a categoria</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Apartamento">Apartamento</option>
+                    </select>
 
-                    <div class="row">
-                        <select>
-                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
-                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
-                        </select>                        
-                        <select>
-                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
-                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
-                        </select>                        
-                        <select>
-                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
-                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
-                        </select>                        
-                    </div>
+                    <input id="input-bairro-cidade" type="text" placeholder="Bairro ou cidade:">
+                    
+                    <button id="buscarBtn"> <span>Buscar</span> <i class="fa-solid fa-magnifying-glass"></i> </button>
                 </div>
 
                 <div class="botao">
-                    <button>Buscar agora</button>
+                    <button id="limparFiltrosBtn">Limpar filtros</button>
                 </div>
             </div>
         </div>
@@ -84,11 +64,12 @@
 
     <div id="app">
         <!-- renderiza com o script que faz o fectch com a api -->
-        
+
         <button id="verMaisBtn">Ver Mais</button>
         <button id="topo"><i class="fa-solid fa-arrow-up"></i></button>
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>
