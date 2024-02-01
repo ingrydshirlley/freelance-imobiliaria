@@ -25,7 +25,7 @@
         <div class="main-header">
             <div class="texts">
                 <h1> Mais de 2 anos atuando
-                    no mercado imobiliário.
+                    no mercado <span>imobiliário</span>.
                 </h1>
     
                 <span>
@@ -35,14 +35,58 @@
             </div>
     
             <div class="container-filters">
-    
+                <div class="tipo">
+                    <button class="imovel-alugar">Imóveis para Alugar</button>
+                    <button class="imovel-comprar">Imóveis para Comprar</button>
+                    <button class="imovel-video">Imóveis com Vídeo</button>
+                </div>
+
+                <div class="filtros">
+                    <div class="row">
+                        <select>
+                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
+                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
+                        </select>                        
+                        <select>
+                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
+                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
+                        </select>                        
+                        <select>
+                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
+                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
+                        </select>                        
+                    </div>
+
+                    <div class="row">
+                        <select>
+                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
+                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
+                        </select>                        
+                        <select>
+                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
+                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
+                        </select>                        
+                        <select>
+                            <option value=”valor_do_item_01”>texto explicativo do item 01</option> 
+                            <option value=”valor_do_item_02”>texto explicativo do item 02</option> 
+                        </select>                        
+                    </div>
+                </div>
+
+                <div class="botao">
+                    <button>Buscar agora</button>
+                </div>
             </div>
         </div>
     </header>
 
     <div id="app">
         <!-- renderiza com o script que faz o fectch com a api -->
+        
+        <button id="verMaisBtn">Ver Mais</button>
+        <button id="topo"><i class="fa-solid fa-arrow-up"></i></button>
     </div>
+
 
     <script src="app.js"></script>
 </body>
