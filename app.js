@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 <h2> ${casa.descricao} </h2>
                 
-                <p class="preco"> R$ ${casa.preco} </p>
+                <p class="preco"> R$ ${casa.preco},00 </p>
                 
                 <p class="endereco">${casa.cidade}, ${casa.estado} </p>
                 
