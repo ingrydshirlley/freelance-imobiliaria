@@ -51,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div> `;
 
+        casaDiv.addEventListener('click', () => {
+            abrirModal(casa.id, casa.foto, casa.descricao, casa.preco, casa.tipo, casa.referencia, casa.cidade, casa.estado, casa.bairro, casa.rua, casa.cep, casa.ambientes, casa.dormitórios, casa.metros, casa.video, casa.categoria, casa.garagem, casa.observação, casa.fotos);
+        });
+
         return casaDiv;
     }
 
@@ -91,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.location.reload();
     }
-
 
     verMaisBtn.addEventListener('click', () => {
         fetch('http://localhost:3001/casas')

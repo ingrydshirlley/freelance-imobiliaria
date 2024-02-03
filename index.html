@@ -49,10 +49,12 @@
                         <option value="" disabled selected>Selecione a categoria</option>
                         <option value="Casa">Casa</option>
                         <option value="Apartamento">Apartamento</option>
+                        <option value="Salão">Salão</option>
+                        <option value="Chácara">Chácara</option>
                     </select>
 
                     <input id="input-bairro-cidade" type="text" placeholder="Bairro ou cidade:">
-                    
+
                     <button id="buscarBtn"> <span>Buscar</span> <i class="fa-solid fa-magnifying-glass"></i> </button>
                 </div>
 
@@ -68,8 +70,16 @@
 
         <button id="verMaisBtn">Ver Mais</button>
         <button id="topo"><i class="fa-solid fa-arrow-up"></i></button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="closeModal">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
     </div>
 
+    <script src="modal.js"></script>
     <script src="app.js"></script>
 </body>
 

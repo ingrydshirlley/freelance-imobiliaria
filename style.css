@@ -37,7 +37,6 @@ button#verMaisBtn {
 
 button#verMaisBtn:hover {
     background-color: #1557a2;
-    /* Cor de destaque no hover, ajuste conforme desejado */
 }
 
 button#topo {
@@ -60,6 +59,149 @@ button#topo:hover {
     font-size: 18px;
 }
 
-html, body {
+html,
+body {
     scroll-behavior: smooth;
+}
+
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.805);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    display: flex;
+    height: 600px;
+    margin-top: 2rem;
+}
+
+#modalContent {
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 1rem
+}
+
+.textos-modal{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 45%;
+    align-items: center;
+    justify-content: center;
+}
+
+.textos-modal h1{
+    color: #000;
+    border-bottom: 1PX solid blue;
+    font-size: 1.7rem;
+    font-weight: 800;
+    text-align: start;
+}
+
+.textos-modal div p{
+    text-align: center;
+}
+
+.textos-modal div{
+    width: 100%;
+}
+
+.textos-modal .endereco-modal p{
+    width: 100%;
+    font-size: .9rem;
+    font-weight: 600;
+    color: #000000a8;
+}
+
+.textos-modal .preco-modal p{
+    width: 100%;
+    color: #207FEE;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.close {
+    color: #d71d1d;
+    font-size: 28px;
+    position: fixed;
+    font-weight: bold;
+    right: 18%;
+    transition: all 0.7s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.carousel-slide {
+    max-width: 100%;
+    max-height: 90%;
+    display: flex;
+}
+
+.carousel-controls {
+    display: flex;
+    width: 100%;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+}
+
+.prev, .next {
+    cursor: pointer;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #2080eee3;
+    border: none;
+    border-radius: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.prev:active, .next:active {
+    background-color: #0073ffe3;
+}
+
+#imageCarousel {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#imageCarousel img{
+    width: 100%;
+    display: flex;
+    object-fit: cover;
+    border-radius: 10px;
 }
